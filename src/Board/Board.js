@@ -10,9 +10,9 @@ class Board extends React.Component {
 	componentDidMount() {}
 
 	onRemoveItem = (index) => {
-		const { onRemoveItem} = this.props;
+		const { onRemoveItem } = this.props;
 		onRemoveItem(index);
-	}
+	};
 
 	render() {
 		const { object,onAddButtonClick,onRemoveButtonClick,onAddInputChange,onRemoveInputChange,onRemoveItem } = this.props;
@@ -27,6 +27,7 @@ class Board extends React.Component {
 						</div>
 						<Button type={'add'} onClick={onAddButtonClick}/>
 					</div>
+					
 				</div>
 			</div>
 		);

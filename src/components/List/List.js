@@ -4,13 +4,14 @@ import {IconXMark} from '../../resources/svg/Icons';
 
 class List extends React.Component {
 	state = {
-		items: ["Perro","Gato","Elefante","Pato","Cerdo"],
-		name: '',
-		index: 0,
-		object: {}
-	};
+			};
 
 	componentDidMount() {}
+
+	onClose = (index) => {
+		const { onRemoveItem } = this.props;
+		onRemoveItem(index);
+	};
 
 	render() {
 		const { items, index } = this.props;
@@ -18,9 +19,9 @@ class List extends React.Component {
 			<div className={styles.main}>
 				<ul className={styles.list}>
 					{items.map((item, i) => (
-						<li key={i} className={index === i ? styles.item_selected:styles.item}>
+						<li key={i} className={index == i ? styles.item_selected : styles.item}>
 							<p className={styles.item_name}>{item}</p>
-							<div onClick={() => this.onConsole(i)}>
+							<div onClick={() => this.onClose(i)}>
 							<IconXMark className={styles.icon}/>
 							</div>
 						</li>
